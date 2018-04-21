@@ -18,6 +18,7 @@ if [ "$MYSQL_REPLICA_USER" ]; then
                 echo >&2 'error: MYSQL_REPLICA_USER set, but MYSQL_REPLICA_PASS not set'
                 exit 1
         fi
+        echo "Creating Replication Users"
         echo "CREATE USER '$MYSQL_REPLICA_USER'@'%' IDENTIFIED BY '$MYSQL_REPLICA_PASS'; " | "${mysql[@]}"
         echo "GRANT REPLICATION SLAVE ON *.* TO '$MYSQL_REPLICA_USER'@'%'; " | "${mysql[@]}"
         # REPLICATION CLIENT privileges are required to get master position
