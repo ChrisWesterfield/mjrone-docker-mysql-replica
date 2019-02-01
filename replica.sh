@@ -64,4 +64,3 @@ if [ "$MYSQL_MASTER_SERVER" ]; then
 
     echo "START SLAVE;"  | "${mysql[@]}"
 fi
-

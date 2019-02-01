@@ -1,4 +1,3 @@
-FROM mysql:5.7
-MAINTAINER Christopher Westerfield <chris@mjr.one>
+FROM mysql:8.0
+LABEL maintainer="Chris Westerfield <chris@mjr.one>"
 COPY replica.sh /docker-entrypoint-initdb.d/
-
